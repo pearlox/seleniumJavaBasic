@@ -11,6 +11,7 @@ import java.time.Duration;
 public class JavascriptExecutorDemo {
 
     protected static void takeScreenshot(WebDriver driver,String filePath) throws IOException {
+
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File srcFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 
@@ -51,6 +52,9 @@ public class JavascriptExecutorDemo {
             /**
              * enter text into the text area
              */
+            javascriptExecutor.executeScript("arguments[0].setAttribute('placeholder',arguments[1]);",searchBoxElement,"i have modified");
+            takeScreenshot(driver,System.getProperty("user.dir")+File.separator+"placeholder.png");
+
             javascriptExecutor.executeScript("arguments[0].setAttribute('value',arguments[1]);",searchBoxElement,"java");
 
             WebElement searchButtonElement = driver.findElement(By.id("basic-addon2"));
