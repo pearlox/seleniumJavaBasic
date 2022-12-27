@@ -47,6 +47,10 @@ public class AlertClassDemo {
             System.out.println(textinalert);
             alert.accept();
 
+            driver.get("https://leafground.com/alert.xhtml");
+            driver.findElement(By.xpath("//h5[text()='Sweet Modal Dialog']/..//button")).click();
+            driver.findElement(By.xpath("//span[contains(text(),'Modal Dialog')]/..//a[@href='#']")).click();
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
