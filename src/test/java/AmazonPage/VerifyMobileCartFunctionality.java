@@ -10,11 +10,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utilities.SeleniumLibrary;
 
-import java.time.Duration;
+import static utilities.SeleniumLibrary.driver;
 
-public class VerifyAmazonHomePage {
+public class VerifyMobileCartFunctionality {
 
-    public WebDriver driver;
     public HomePageFunctionalities homePageFunctionalities;
 
     @BeforeSuite
@@ -32,12 +31,6 @@ public class VerifyAmazonHomePage {
     public void verifyIconsInHomePage() {
 
         driver.get("https://www.amazon.in/");
-        boolean cartIsDisplayed = homePageFunctionalities.verifyCartIcon();
-        Assert.assertTrue(cartIsDisplayed);
-
-
-        homePageFunctionalities.verifyMobileIcon();
-        homePageFunctionalities.verifyReturnAndOrderIcon();
     }
 
     @AfterTest

@@ -3,31 +3,30 @@ package functionalities;
 import objectRepository.AmazonHomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import utilities.SeleniumLibrary;
 
-public class HomePageFunctionalities {
+import java.util.List;
+
+public class HomePageFunctionalities extends SeleniumLibrary {
 
     AmazonHomePage amazonHomePage = new AmazonHomePage();
 
-    public boolean verifyCartIcon(WebDriver driver) {
+    public boolean verifyCartIcon() {
 
-        boolean status=false;
-        String elementLocator = amazonHomePage.cartIcon.split("\\$")[0];
-        String value = amazonHomePage.cartIcon.split("\\$")[1];
-
-        if(elementLocator.equalsIgnoreCase("id")) {
-            status = driver.findElement(By.id(value)).isDisplayed();
-        } else if(elementLocator.equalsIgnoreCase("xpath")) {
-            status = driver.findElement(By.xpath(value)).isDisplayed();
-        }
-
+        boolean status=isDisplayed(amazonHomePage.cartIcon);
         return status;
     }
 
-    public void verifyReturnAndOrderIcon(WebDriver driver) {
+    public void verifyReturnAndOrderIcon() {
 
     }
 
-    public void verifyMobileIcon(WebDriver driver) {
+    public void verifyMobileIcon() {
+
+    }
+
+    public void verifySearchSuggestions() {
 
     }
 

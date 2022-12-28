@@ -7,4 +7,7 @@ public class AmazonHomePage {
     public String returnOrdersIcon = "xpath$//a[@id='nav-orders']";
     public String logoButton = "xpath$//div[@id='nav-logo']//a";
     public String mobilesButton = "xpath$//a[text()='Mobiles']";
+
+    public String searchTextBox = "id$twotabsearchtextbox";
+
 }
